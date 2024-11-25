@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://audio demo control.gd" id="1_y0od2"]
 [ext_resource type="Script" path="res://kickbutton.gd" id="2_10sqg"]
-[ext_resource type="AudioStream" uid="uid://b5het1ofkwgjl" path="res://enemy hit.wav" id="2_ylcq6"]
-[ext_resource type="AudioStream" uid="uid://dd4s0pqay3s3t" path="res://slow motion.wav" id="3_j28ll"]
 [ext_resource type="Script" path="res://snarebutton.gd" id="3_msyvn"]
+[ext_resource type="AudioStream" uid="uid://dm5prb3dh5wgy" path="res://kick.wav" id="4_8d5wd"]
+[ext_resource type="AudioStream" uid="uid://dvs0owcywqyte" path="res://snare.wav" id="5_lvdlc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,11 +35,11 @@ action_mode = 0
 text = "Snare"
 script = ExtResource("3_msyvn")
 
-[node name="HitSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ylcq6")
+[node name="KickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8d5wd")
 
-[node name="Motion" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_j28ll")
+[node name="SnareSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_lvdlc")
 
 [connection signal="mouse_entered" from="Kick" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Kick" to="Kick" method="_on_pressed"]
