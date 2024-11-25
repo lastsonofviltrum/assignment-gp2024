@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://42x43f02dirm"]
+[gd_scene load_steps=4 format=3 uid="uid://42x43f02dirm"]
 
-[ext_resource type="Script" path="res://audio demo.gd" id="1_wiycm"]
+[ext_resource type="Script" path="res://audio demo c2.gd" id="1_w2yr6"]
 [ext_resource type="AudioStream" uid="uid://b5het1ofkwgjl" path="res://enemy hit.wav" id="2_wll3r"]
+[ext_resource type="Script" path="res://audio demo asp2d.gd" id="3_hqpqk"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_wiycm")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w2yr6")
 
 [node name="Button" type="Button" parent="."]
 offset_left = 114.0
@@ -12,8 +19,10 @@ offset_top = 55.0
 offset_right = 253.0
 offset_bottom = 119.0
 theme_override_font_sizes/font_size = 40
-text = "KICK"
-script = ExtResource("1_wiycm")
+action_mode = 0
+text = "Kick"
+script = ExtResource("1_w2yr6")
 
 [node name="Kick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_wll3r")
+script = ExtResource("3_hqpqk")
