@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://87b5bwyjvti6"]
+[gd_scene load_steps=15 format=3 uid="uid://87b5bwyjvti6"]
 
 [ext_resource type="Script" path="res://audio demo control.gd" id="1_y0od2"]
 [ext_resource type="Script" path="res://kickbutton.gd" id="2_10sqg"]
 [ext_resource type="Script" path="res://snarebutton.gd" id="3_msyvn"]
 [ext_resource type="AudioStream" uid="uid://dm5prb3dh5wgy" path="res://kick.wav" id="4_8d5wd"]
 [ext_resource type="AudioStream" uid="uid://dvs0owcywqyte" path="res://snare.wav" id="5_lvdlc"]
+[ext_resource type="AudioStream" uid="uid://busmqx7tgf6oa" path="res://chords/c.wav" id="6_55xxs"]
+[ext_resource type="AudioStream" uid="uid://cav250hxtcp4d" path="res://chords/d.wav" id="7_kf8vb"]
+[ext_resource type="AudioStream" uid="uid://3smlrfercvao" path="res://chords/e.wav" id="8_b1itf"]
+[ext_resource type="AudioStream" uid="uid://bkijxra8ljmhb" path="res://chords/f.wav" id="9_l60w7"]
+[ext_resource type="AudioStream" uid="uid://b4pg06tlxajbi" path="res://chords/g.wav" id="10_b11dx"]
+[ext_resource type="AudioStream" uid="uid://bo2qj1yskp230" path="res://chords/a.wav" id="11_naxba"]
+[ext_resource type="AudioStream" uid="uid://dvhp4sxdkwc2k" path="res://chords/b.wav" id="12_t7lkv"]
+[ext_resource type="AudioStream" uid="uid://s3cgjm4lry05" path="res://chords/c2.wav" id="13_yiady"]
+[ext_resource type="AudioStream" uid="uid://daxjobgb2kdr0" path="res://Drum Loop (Crimewave).wav" id="14_sdgpg"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -40,6 +49,33 @@ stream = ExtResource("4_8d5wd")
 
 [node name="SnareSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_lvdlc")
+
+[node name="C" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_55xxs")
+
+[node name="D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_kf8vb")
+
+[node name="E" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_b1itf")
+
+[node name="F" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_l60w7")
+
+[node name="G" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_b11dx")
+
+[node name="A" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_naxba")
+
+[node name="B" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_t7lkv")
+
+[node name="C2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_yiady")
+
+[node name="DrumLoop(crimewave)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_sdgpg")
 
 [connection signal="mouse_entered" from="Kick" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Kick" to="Kick" method="_on_pressed"]
