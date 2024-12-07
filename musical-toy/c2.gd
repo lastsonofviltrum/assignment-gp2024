@@ -10,4 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ChordC2"):
 		$"../C2".play()
+	if Input.is_action_just_released("ChordC2"):
+		$"../C2".stop()
 	pass

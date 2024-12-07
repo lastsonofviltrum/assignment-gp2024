@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://87b5bwyjvti6"]
+[gd_scene load_steps=24 format=3 uid="uid://87b5bwyjvti6"]
 
 [ext_resource type="Script" path="res://audio demo control.gd" id="1_y0od2"]
 [ext_resource type="Script" path="res://kickbutton.gd" id="2_10sqg"]
@@ -14,6 +14,15 @@
 [ext_resource type="AudioStream" uid="uid://dvhp4sxdkwc2k" path="res://chords/b.wav" id="12_t7lkv"]
 [ext_resource type="AudioStream" uid="uid://s3cgjm4lry05" path="res://chords/c2.wav" id="13_yiady"]
 [ext_resource type="AudioStream" uid="uid://daxjobgb2kdr0" path="res://Drum Loop (Crimewave).wav" id="14_sdgpg"]
+[ext_resource type="Script" path="res://c.gd" id="15_faird"]
+[ext_resource type="Script" path="res://d.gd" id="16_7b114"]
+[ext_resource type="Script" path="res://e.gd" id="17_mp37o"]
+[ext_resource type="Script" path="res://f.gd" id="18_ml5p6"]
+[ext_resource type="Script" path="res://g.gd" id="19_tn60a"]
+[ext_resource type="Script" path="res://a.gd" id="20_8no2w"]
+[ext_resource type="Script" path="res://b.gd" id="21_82e8e"]
+[ext_resource type="Script" path="res://c2.gd" id="22_285us"]
+[ext_resource type="Script" path="res://drum loop.gd" id="23_ywnv6"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -77,7 +86,90 @@ stream = ExtResource("13_yiady")
 [node name="DrumLoop(crimewave)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_sdgpg")
 
+[node name="ButtonC" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 220.0
+offset_right = 206.0
+offset_bottom = 272.0
+text = "C (Q)"
+script = ExtResource("15_faird")
+
+[node name="ButtonD" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 297.0
+offset_right = 206.0
+offset_bottom = 349.0
+text = "D (W)"
+script = ExtResource("16_7b114")
+
+[node name="ButtonE" type="Button" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 370.0
+offset_right = 206.0
+offset_bottom = 422.0
+text = "E"
+script = ExtResource("17_mp37o")
+
+[node name="ButtonF" type="Button" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 444.0
+offset_right = 202.0
+offset_bottom = 496.0
+text = "F (R)"
+script = ExtResource("18_ml5p6")
+
+[node name="ButtonG" type="Button" parent="."]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 524.0
+offset_right = 203.0
+offset_bottom = 576.0
+text = "G (U)"
+script = ExtResource("19_tn60a")
+
+[node name="ButtonA" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 220.0
+offset_right = 365.0
+offset_bottom = 272.0
+text = "A (I)"
+script = ExtResource("20_8no2w")
+
+[node name="ButtonB" type="Button" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 291.0
+offset_right = 366.0
+offset_bottom = 343.0
+text = "B (O)"
+script = ExtResource("21_82e8e")
+
+[node name="ButtonC2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 369.0
+offset_right = 366.0
+offset_bottom = 421.0
+text = "C (P)"
+script = ExtResource("22_285us")
+
+[node name="Drum Loop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 793.0
+offset_top = 63.0
+offset_right = 982.0
+offset_bottom = 120.0
+text = "DRUM LOOP"
+script = ExtResource("23_ywnv6")
+
 [connection signal="mouse_entered" from="Kick" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Kick" to="Kick" method="_on_pressed"]
 [connection signal="mouse_entered" from="Snare" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Snare" to="Snare" method="_on_pressed"]
+[connection signal="pressed" from="Drum Loop" to="Drum Loop" method="_on_pressed"]
+[connection signal="toggled" from="Drum Loop" to="Drum Loop" method="_on_toggled"]
